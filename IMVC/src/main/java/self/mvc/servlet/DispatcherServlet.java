@@ -368,9 +368,7 @@ public class DispatcherServlet extends HttpServlet {
         // 最终调用handler的method属性
         try {
             handler.getMethod().invoke(handler.getController(), paraValues);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
+        } catch (IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
 
